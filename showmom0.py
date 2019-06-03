@@ -30,7 +30,7 @@ if SEmom0 == 1:
     #ff.set_system_latex(True)
     maxcolor = np.nanmax(sehdu1.data)
     mincolor = 4.
-    ff.show_colorscale(cmap='afmhot', vmin=mincolor, vmax=maxcolor, stretch='linear')
+    ff.show_colorscale(cmap='afmhot', vmin=mincolor, vmax=maxcolor, stretch='sqrt')
     #ff.show_regions('olay.reg')
     #ff.show_regions('olay1.reg')
     ff.add_colorbar() 
@@ -69,7 +69,7 @@ if NWmom0 == 1:
     #ff.set_system_latex(True)
     maxcolor = np.nanmax(nwhdu1.data)
     mincolor = 4.
-    ff.show_colorscale(cmap='afmhot', vmin=mincolor, vmax=maxcolor, stretch='linear')
+    ff.show_colorscale(cmap='afmhot', vmin=mincolor, vmax=maxcolor, stretch='sqrt')
     #ff.show_regions('olay.reg')
     #ff.show_regions('olay1.reg')
     ff.add_colorbar() 
