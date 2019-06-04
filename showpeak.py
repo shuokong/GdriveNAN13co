@@ -29,7 +29,7 @@ if SEpeak == 1:
     ff.set_theme('publication')
     #ff.set_system_latex(True)
     maxcolor = np.nanmax(sehdu1.data)
-    mincolor = 2.
+    mincolor = 3.
     ff.show_colorscale(cmap='gist_heat', vmin=mincolor, vmax=maxcolor, stretch='linear')
     #ff.show_regions('olay.reg')
     #ff.show_regions('olay1.reg')
@@ -68,7 +68,7 @@ if NWpeak == 1:
     ff.set_theme('publication')
     #ff.set_system_latex(True)
     maxcolor = np.nanmax(nwhdu1.data)
-    mincolor = 2.
+    mincolor = 3.
     ff.show_colorscale(cmap='gist_heat', vmin=mincolor, vmax=maxcolor, stretch='linear')
     #ff.show_regions('olay.reg')
     #ff.show_regions('olay1.reg')
