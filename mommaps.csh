@@ -32,3 +32,15 @@ fits in=mom2_NW_mask_13co_pix_2_Tmb.mir op=xyout out=mom2_NW_mask_13co_pix_2_Tmb
 fits in=mom2_SE_mask_13co_pix_2_Tmb.mir op=xyout out=mom2_SE_mask_13co_pix_2_Tmb.fits
 rm -rf mom2_NW_mask_13co_pix_2_Tmb.mir
 rm -rf mom2_SE_mask_13co_pix_2_Tmb.mir
+
+rm -rf peak_NW_mask_13co_pix_2_Tmb.mir
+rm -rf peak_SE_mask_13co_pix_2_Tmb.mir
+moment in=NW_mask_13co_pix_2_Tmb.mir mom=-2 out=peak_NW_mask_13co_pix_2_Tmb.mir
+moment in=SE_mask_13co_pix_2_Tmb.mir mom=-2 out=peak_SE_mask_13co_pix_2_Tmb.mir
+rm -rf peak_NW_mask_13co_pix_2_Tmb.fits
+rm -rf peak_SE_mask_13co_pix_2_Tmb.fits
+fits in=peak_NW_mask_13co_pix_2_Tmb.mir op=xyout out=peak_NW_mask_13co_pix_2_Tmb.fits
+fits in=peak_SE_mask_13co_pix_2_Tmb.mir op=xyout out=peak_SE_mask_13co_pix_2_Tmb.fits
+rm -rf peak_NW_mask_13co_pix_2_Tmb.mir
+rm -rf peak_SE_mask_13co_pix_2_Tmb.mir
+
