@@ -44,8 +44,8 @@ def gaussian_fit(xdata,ydata,yerr,pinit): # xdata,ydata,yerr n-element arrays, p
 regionfiles = [['SE_mask_13co_pix_2_Tmb.fits','SE','Gulf of Mexico'],['NW_mask_13co_pix_2_Tmb.fits','NW','Pelican Head']]
 
 p=plt.figure(figsize=(6,10))
-plt.subplots_adjust(top=0.96,bottom=0.07,left=0.13,right=0.97)
-p.subplots_adjust(hspace=0.001)
+plt.subplots_adjust(top=0.96,bottom=0.07,left=0.18,right=0.97)
+p.subplots_adjust(hspace=0.1)
 for nn,ii in enumerate(regionfiles):
     ff,fname,region = ii
     hdu1 = fits.open(ff)[0]
@@ -71,10 +71,11 @@ for nn,ii in enumerate(regionfiles):
         plt.setp(ax.get_xticklabels(), visible=False)
     else:
         plt.xlabel(r'$v_{\rm LSR}\rm (km~s^{-1})$')
-    plt.xlim(-25,20.) 
-    ax.set_ylim(-0.2,4)
-    ax.vlines(velocity[peakind],-0.2,max(spectrum),linestyle='dashed')
-    ax.text(velocity[peakind]+0.2, 0, '%.1f' % velocity[peakind],horizontalalignment='left',verticalalignment='center')
+    plt.xlim(-25,20) 
+    ax.set_ylim(-0.2,3.5)
+#    ax.vlines(velocity[peakind],-0.2,max(spectrum),linestyle='dashed')
+#    ax.text(velocity[peakind]+0.2, 0, '%.1f' % velocity[peakind],horizontalalignment='left',verticalalignment='center')
+    ax.hlines(0,-25,20,linestyle='dotted')
 
 pdfname = 'averspec13.pdf'
 os.system('rm '+pdfname)
