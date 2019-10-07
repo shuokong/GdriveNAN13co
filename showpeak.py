@@ -12,6 +12,8 @@ rc('font', **font)
 
 sehdu1 = fits.open('peak_SE_mask_13co_pix_2_Tmb.fits')[0]
 nwhdu1 = fits.open('peak_NW_mask_13co_pix_2_Tmb.fits')[0]
+sebgps = fits.open('../nancont/SE_BGPS.fits')[0]
+nwbgps = fits.open('../nancont/NW_BGPS.fits')[0]
 
 SEpeak = 1
 NWpeak = 1
@@ -29,8 +31,9 @@ if SEpeak == 1:
     ff.set_theme('publication')
     #ff.set_system_latex(True)
     maxcolor = 15.
-    mincolor = 3.
-    ff.show_colorscale(cmap='gist_heat', vmin=mincolor, vmax=maxcolor, stretch='sqrt')
+    mincolor = 2.
+    ff.show_colorscale(cmap='gist_heat', vmin=mincolor, vmax=maxcolor, stretch='linear')
+    ff.show_contour(data=sebgps, levels=np.arange(0.3,2.0,0.3), colors='white', linewidths=0.1) 
     #ff.show_regions('olay.reg')
     #ff.show_regions('olay1.reg')
     ff.add_colorbar() 
@@ -68,8 +71,9 @@ if NWpeak == 1:
     ff.set_theme('publication')
     #ff.set_system_latex(True)
     maxcolor = 20.
-    mincolor = 3.
+    mincolor = 2.
     ff.show_colorscale(cmap='gist_heat', vmin=mincolor, vmax=maxcolor, stretch='linear')
+    ff.show_contour(data=nwbgps, levels=np.arange(0.3,2.0,0.2), colors='white', linewidths=0.1) 
     #ff.show_regions('olay.reg')
     #ff.show_regions('olay1.reg')
     ff.add_colorbar() 
