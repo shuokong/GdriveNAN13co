@@ -18,8 +18,10 @@ sehdu1 = fits.open('mom0_SE_mask_13co_pix_2_Tmb.fits')[0]
 nwhdu1 = fits.open('mom0_NW_mask_13co_pix_2_Tmb.fits')[0]
 
 makeYSOmap = 0
-SEmom0 = 1
-NWmom0 = 1
+SEmom0 = 0
+NWmom0 = 0
+SEplot = 1
+NWplot = 1
 
 if makeYSOmap:
 
@@ -139,5 +141,81 @@ if NWmom0 == 1:
     plt.savefig(pdfname,bbox_inches='tight')
     os.system('open '+pdfname)
     os.system('cp '+pdfname+os.path.expandvars(' /Users/shuokong/GoogleDrive/imagesCARMANan/'))
+
+if NWplot == 1:
+    mask_nwhdu1 = fits.open('NW_SigmaYSO.fits')[0]
+    ########################
+    plot_xlist = [nwhdu1.data.flatten()]
+    plot_ylist = [mask_nwhdu1.data.flatten()]
+    
+    plot_xlabel_list = [r'$\Sigma_{\rm total}~\rm (M_\odot~pc^{-2}$']
+    plot_ylabel_list = [r'$\Sigma_{\rm YSO}~\rm (stars~pc^{-2}$']
+    
+    xpanels = 1
+    ypanels = 1
+    xpanelwidth = 5
+    ypanelwidth = 5
+    
+    datafiles = {}
+    pdfname = 'NW_Sigma_yso_13co.pdf'
+    for i in range(0,xpanels):
+        for j in range(0,ypanels):
+            panel = i+j*xpanels+1
+            print 'panel',panel 
+            velocity = plot_xlist[panel-1]
+            rawintens = plot_ylist[panel-1]
+            datafiles['panel'+str(panel)] = {'title':'','lines':{'1':{'x':velocity,'y':rawintens,'legends':'data','drawsty':'default',}},'ylim':[1.e1,1.e3],'xlim':[1.,1.e2],'xscale':'log','yscale':'log','xlabel':plot_xlabel_list[panel-1],'ylabel':plot_ylabel_list[panel-1],'text':''}
+    fig, axes = plt.subplots(ncols=xpanels, nrows=ypanels, figsize=(5*xpanels,5*ypanels))
+    plt.subplots_adjust(wspace=0.1,hspace=0.1)
+    for i in range(0,xpanels):
+        for j in range(0,ypanels):
+            panelnum = i+j*xpanels+1
+            #ax = axes[j,i]
+            ax = axes
+            ax.set_xscale(datafiles['panel'+str(panelnum)]['xscale']) 
+            ax.set_yscale(datafiles['panel'+str(panelnum)]['yscale']) 
+            for datafilenum in range(len(datafiles['panel'+str(panelnum)]['lines'].keys())): 
+                x = datafiles['panel'+str(panelnum)]['lines'][str(datafilenum+1)]['x']
+                y = datafiles['panel'+str(panelnum)]['lines'][str(datafilenum+1)]['y']
+                legend = datafiles['panel'+str(panelnum)]['lines'][str(datafilenum+1)]['legends']
+                drawsty = datafiles['panel'+str(panelnum)]['lines'][str(datafilenum+1)]['drawsty']
+                ax.scatter(x,y,label=legend)
+            #ax.legend(frameon=False,prop={'size':14},labelspacing=0.1) 
+            #if j == 0:
+            #    ax.set_title(datafiles['panel'+str(panelnum)]['title'])
+            #ax.text(0.1, 0.9,datafiles['panel'+str(panelnum)]['title']+' '+datafiles['panel'+str(panelnum)]['text'],horizontalalignment='left',verticalalignment='center',transform = ax.transAxes,fontsize=12)
+            #ax.text(0.05, 0.95,'('+lletter[panelnum-1]+')',horizontalalignment='center',verticalalignment='center',transform = ax.transAxes)
+            xlabel = datafiles['panel'+str(panelnum)]['xlabel']
+            ylabel = datafiles['panel'+str(panelnum)]['ylabel']
+            #ax.set_xticks(np.arange(datafiles['panel'+str(panelnum)]['xlim'][0],datafiles['panel'+str(panelnum)]['xlim'][1],0.1),minor=True)
+            #for vl in vertlinex:
+            #    ax.vlines(vl,ydown,yup,linestyles='dashed')
+            #ax.hlines(2,datafiles['panel'+str(panelnum)]['xlim'][0],datafiles['panel'+str(panelnum)]['xlim'][1],linestyle='dashed')
+            if j != ypanels-1:
+                ax.set_yticks(ax.get_yticks()[1:])
+                ax.set_xticklabels(ax.get_xlabel(),visible=False)
+            else: 
+                ax.set_xlabel(xlabel)
+            if i != 0:
+                ax.set_yticklabels(ax.get_ylabel(),visible=False) 
+                ax.set_xticks(ax.get_xticks()[1:]) 
+            else: 
+                ax.set_ylabel(ylabel)
+            if datafiles['panel'+str(panelnum)]['ylim']:
+                ydown = datafiles['panel'+str(panelnum)]['ylim'][0]
+                yup   = datafiles['panel'+str(panelnum)]['ylim'][1]
+                ax.set_ylim(ydown,yup)
+            #else:
+            #    ydown,yup = ax.get_ylim()
+            if datafiles['panel'+str(panelnum)]['xlim']:
+                ax.set_xlim(datafiles['panel'+str(panelnum)]['xlim'][0],datafiles['panel'+str(panelnum)]['xlim'][1])
+                #ax.hlines(0,datafiles['panel'+str(panelnum)]['xlim'][0],datafiles['panel'+str(panelnum)]['xlim'][1],linestyle='dotted')
+            
+    os.system('rm '+pdfname)
+    plt.savefig(pdfname,bbox_inches='tight')
+    plt.close(fig)
+    os.system('open '+pdfname)
+    os.system('cp '+pdfname+os.path.expandvars(' /Users/shuokong/GoogleDrive/imagesCARMANan/'))
+
 
 
