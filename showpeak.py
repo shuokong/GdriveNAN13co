@@ -34,8 +34,8 @@ if SEpeak == 1:
     mincolor = 2.
     ff.show_colorscale(cmap='gist_heat', vmin=mincolor, vmax=maxcolor, stretch='linear')
     ff.show_contour(data=sebgps, levels=np.arange(0.4,5.0,0.5), colors='white', linewidths=1) 
-    #ff.show_regions('olay.reg')
-    #ff.show_regions('olay1.reg')
+    #ff.show_regions('rebull.reg')
+    ff.show_regions('edges.reg')
     ff.add_colorbar() 
     ff.colorbar.set_pad(0.5)
     ff.colorbar.set_axis_label_text('K')
@@ -49,7 +49,7 @@ if SEpeak == 1:
     ff.show_ellipses(beamx,beamy,bmaj,bmin,angle=beamangle-90,facecolor='black',edgecolor='black')
     textx = xcenter - wid/2.*9./10.
     texty = ycenter - hei/2.*9./10.
-    ff.add_label(textx,texty,'Peak Intensity $^{13}$CO(1-0)',weight='bold')
+    ff.add_label(textx,texty,'Peak Intensity $^{13}$CO(1-0)',weight='bold',zorder=3)
     #ff.tick_labels.set_xformat('dd')
     #ff.tick_labels.set_yformat('dd')
     pdfname = 'peak_SE_13co_pix_2_Tmb.pdf'
@@ -74,8 +74,8 @@ if NWpeak == 1:
     mincolor = 2.
     ff.show_colorscale(cmap='gist_heat', vmin=mincolor, vmax=maxcolor, stretch='linear')
     ff.show_contour(data=nwbgps, levels=np.arange(0.4,2.0,0.2), colors='white', linewidths=1) 
-    #ff.show_regions('olay.reg')
-    #ff.show_regions('olay1.reg')
+    #ff.show_regions('rebull.reg')
+    ff.show_regions('edges.reg')
     ff.add_colorbar() 
     ff.colorbar.set_pad(0.5)
     ff.colorbar.set_axis_label_text('K')
@@ -89,7 +89,7 @@ if NWpeak == 1:
     ff.show_ellipses(beamx,beamy,bmaj,bmin,angle=beamangle-90,facecolor='black',edgecolor='black')
     textx = xcenter + wid/2.*4./5.
     texty = ycenter + hei/2.*9./10.
-    ff.add_label(textx,texty,'Peak Intensity $^{13}$CO(1-0)',weight='bold')
+    ff.add_label(textx,texty,'Peak Intensity $^{13}$CO(1-0)',weight='bold',zorder=3)
     #ff.tick_labels.set_xformat('dd')
     #ff.tick_labels.set_yformat('dd')
     pdfname = 'peak_NW_13co_pix_2_Tmb.pdf'
