@@ -1,0 +1,8 @@
+# Region file format: DS9 version 4.1
+global color=green dashlist=8 3 width=1 font="helvetica 10 normal roman" select=1 highlite=1 dash=0 fixed=0 edit=1 move=1 delete=1 include=1 source=1
+fk5
+# text(313.7184645,43.6016227) color=black width=2 font="helvetica 24 normal roman" text={F-1}
+# text(313.6696125,43.9010344) textangle=0.16670779 color=black width=2 font="helvetica 24 normal roman" text={F-2}
+# text(313.9578208,43.8503781) textangle=0.16670779 color=black width=2 font="helvetica 24 normal roman" text={F-3}
+# text(314.0185496,43.6302628) textangle=0.16670779 color=black width=2 font="helvetica 24 normal roman" text={F-4}
+# text(314.3124079,43.7025900) textangle=0.16670779 color=black width=2 font="helvetica 24 normal roman" text={F-5}

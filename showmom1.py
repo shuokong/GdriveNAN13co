@@ -12,6 +12,7 @@ rc('font', **font)
 
 ## SE
 hdu1 = fits.open('mom1_SE_mask_13co_pix_2_Tmb.fits')[0]
+mask_hdu = fits.open('SE_filaments.fits')[0]
 xcenter = 314.0150412
 ycenter = 43.70085501
 wid = 1.1022223
@@ -25,8 +26,8 @@ ff.set_theme('publication')
 #ff.set_system_latex(True)
 maxcolor = np.nanmax(hdu1.data)
 ff.show_colorscale(cmap='jet', vmin=-10, vmax=10, stretch='linear')
-#ff.show_regions('olay2.reg')
-#ff.show_contour(mask_hdu, levels=1, colors='yellow', linewidths=0.1)
+ff.show_regions('SE_filaments_names.reg')
+ff.show_contour(mask_hdu, levels=[0.9,1.], colors='black', filled=True, linewidths=1, zorder=2)
 ff.add_colorbar() 
 ff.colorbar.set_pad(0.5)
 ff.colorbar.set_axis_label_text('km s$^{-1}$')
