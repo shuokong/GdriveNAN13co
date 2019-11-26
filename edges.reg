@@ -3,13 +3,13 @@ global color=green dashlist=8 3 width=1 font="helvetica 10 normal roman" select=
 fk5
 point(20:55:51.3000,+43:52:25.000) # point=diamond color=cyan width=2 font="helvetica 16 normal roman" text={Bajamar star}
 point(20:50:35.0469,+44:26:29.521) # point=diamond color=cyan width=2 font="helvetica 16 normal roman" text={IRS4}
-ellipse(20:55:20.1091,+43:51:55.025,403.442",131.233",70) # color=cyan font="helvetica 14 normal roman" text={Edge1} dash=1
+ellipse(20:55:20.1091,+43:51:55.025,403.442",131.233",70) # color=cyan font="helvetica 20 normal roman" text={Edge1} dash=1
 ellipse(20:58:41.8089,+43:20:34.029,570.998",331.657",120) # color=cyan dash=1
-ellipse(20:57:43.7522,+43:31:03.625,255.150",130.802",140) # color=cyan font="helvetica 14 normal roman" text={Boomerang1} dash=1
-ellipse(20:55:23.6075,+43:38:32.793,276.428",120.012",70) # color=cyan font="helvetica 14 normal roman" text={Edge2} dash=1
-ellipse(20:56:09.3932,+43:33:33.404,366.790",120.443",10) # color=cyan font="helvetica 14 normal roman" text={Edge3} dash=1
-# text(20:59:02.0451,+43:31:03.916) color=cyan font="helvetica 14 normal roman" text={Boomerang2}
-ellipse(20:50:30.5102,+44:34:35.566,222.319",78.005",20) # color=cyan font="helvetica 14 normal roman" dash=1
-ellipse(20:50:25.7240,+44:19:32.713,249.638",110.407",30) # color=cyan font="helvetica 14 normal roman" dash=1
+ellipse(20:57:43.7522,+43:31:03.625,255.150",130.802",140) # color=cyan font="helvetica 20 normal roman" text={Boomerang1} dash=1
+ellipse(20:55:23.6075,+43:38:32.793,276.428",120.012",70) # color=cyan font="helvetica 20 normal roman" text={Edge2} dash=1
+ellipse(20:56:09.3932,+43:33:33.404,366.790",120.443",10) # color=cyan font="helvetica 20 normal roman" text={Edge3} dash=1
+# text(20:59:02.0451,+43:31:03.916) color=cyan font="helvetica 20 normal roman" text={Boomerang2}
+ellipse(20:50:30.5102,+44:34:35.566,222.319",78.005",20) # color=cyan font="helvetica 20 normal roman" dash=1
+ellipse(20:50:25.7240,+44:19:32.713,249.638",110.407",30) # color=cyan font="helvetica 20 normal roman" dash=1
 # text(20:50:16.8359,+44:37:08.024) color=cyan font="helvetica 20 normal roman" text={Comet1} dash=1
 # text(20:50:10.3924,+44:22:51.864) textangle=0.16670779 color=cyan font="helvetica 20 normal roman" text={Comet2} dash=1
