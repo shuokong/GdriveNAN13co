@@ -13,3 +13,4 @@ ellipse(20:50:30.5102,+44:34:35.566,222.319",78.005",20) # color=cyan font="helv
 ellipse(20:50:25.7240,+44:19:32.713,249.638",110.407",30) # color=cyan font="helvetica 20 normal roman" dash=1
 # text(20:50:16.8359,+44:37:08.024) color=cyan font="helvetica 20 normal roman" text={Comet1} dash=1
 # text(20:50:10.3924,+44:22:51.864) textangle=0.16670779 color=cyan font="helvetica 20 normal roman" text={Comet2} dash=1
+ellipse(20:57:20.8224,+43:49:17.541,366.790",120.443",0) # color=cyan font="helvetica 20 normal roman" text={Wall} dash=1
