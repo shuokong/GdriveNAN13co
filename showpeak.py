@@ -34,7 +34,7 @@ if SEpeak == 1:
     mincolor = 2.
     ff.show_colorscale(cmap='gist_heat', vmin=mincolor, vmax=maxcolor, stretch='linear')
     ff.show_contour(data=sebgps, levels=np.arange(0.4,5.0,0.5), colors='white', linewidths=1) 
-    #ff.show_regions('rebull.reg')
+    ff.show_regions('Bally_fig3.reg')
     ff.show_regions('edges.reg')
     ff.add_colorbar() 
     ff.colorbar.set_pad(0.5)
@@ -74,7 +74,7 @@ if NWpeak == 1:
     mincolor = 2.
     ff.show_colorscale(cmap='gist_heat', vmin=mincolor, vmax=maxcolor, stretch='linear')
     ff.show_contour(data=nwbgps, levels=np.arange(0.4,2.0,0.2), colors='white', linewidths=1) 
-    #ff.show_regions('rebull.reg')
+    ff.show_regions('Bally_fig3.reg')
     ff.show_regions('edges.reg')
     ff.add_colorbar() 
     ff.colorbar.set_pad(0.5)
