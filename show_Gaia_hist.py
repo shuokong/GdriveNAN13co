@@ -7,6 +7,7 @@ from matplotlib import rc
 rc('text', usetex=True)
 font = {'weight' : 'normal','size':20,'family':'sans-serif','sans-serif':['Helvetica']}
 rc('font', **font)
+lletter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 rebull_ICRS_Gaia = open('rebull_ICRS_Gaia.reg', 'r')
 reglines = rebull_ICRS_Gaia.readlines()
@@ -27,8 +28,8 @@ Gulf = [1103.99415377816, 1863.35141353043, 1111.28517301647, 1611.91434721785, 
 clusterlist = [allysos,Gulf,Pelican,PelHat]
 titlelist = ['All','Gulf','Pelican','PelHat']
 
-xpanels = 2
-ypanels = 2
+xpanels = 4
+ypanels = 1
 tkin_mean = np.nanmean(allysos)
 tkin_median = np.nanmedian(allysos)
 tkin_min = np.nanmin(allysos)
@@ -86,7 +87,7 @@ for i in range(0,xpanels):
             ax.set_title(r'')
         ax.text(0.05, 0.9,datafiles['panel'+str(panelnum)]['title'],horizontalalignment='left',verticalalignment='center',transform = ax.transAxes)
         #ax.text(0.1, 0.9,datafiles['panel'+str(panelnum)]['title']+' '+datafiles['panel'+str(panelnum)]['text'],horizontalalignment='left',verticalalignment='center',transform = ax.transAxes,fontsize=12)
-        #ax.text(0.95, 0.9,'('+str(cc+1)+lletter[j]+')',horizontalalignment='right',verticalalignment='center',transform = ax.transAxes,fontsize=12)
+        ax.text(0.9, 0.9,'('+lletter[panelnum-1]+')',horizontalalignment='center',verticalalignment='center',transform = ax.transAxes)
         xlabel = datafiles['panel'+str(panelnum)]['xlabel']
         ylabel = datafiles['panel'+str(panelnum)]['ylabel']
         vertlinex = datafiles['panel'+str(panelnum)]['vertlines']
