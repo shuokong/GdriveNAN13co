@@ -1,16 +1,14 @@
 # Region file format: DS9 version 4.1
 global color=green dashlist=8 3 width=1 font="helvetica 10 normal roman" select=1 highlite=1 dash=0 fixed=0 edit=1 move=1 delete=1 include=1 source=1
 fk5
-point(20:55:51.3000,+43:52:25.000) # point=diamond color=black width=2 font="helvetica 16 normal roman" text={Bajamar star}
-point(20:50:35.0469,+44:26:29.521) # point=diamond color=black width=2 font="helvetica 16 normal roman" text={IRS4}
-ellipse(20:55:20.1091,+43:51:55.025,403.442",131.233",70) # color=black font="helvetica 20 normal roman" text={Edge1} dash=1
-ellipse(20:58:41.8089,+43:20:34.029,570.998",331.657",120) # color=black dash=1
-ellipse(20:57:43.7522,+43:31:03.625,255.150",130.802",140) # color=black font="helvetica 20 normal roman" text={Boomerang1} dash=1
-ellipse(20:55:23.6075,+43:38:32.793,276.428",120.012",70) # color=black font="helvetica 20 normal roman" text={Edge2} dash=1
-ellipse(20:56:09.3932,+43:33:33.404,366.790",120.443",10) # color=black font="helvetica 20 normal roman" text={Edge3} dash=1
-# text(20:59:02.0451,+43:31:03.916) color=black font="helvetica 20 normal roman" text={Boomerang2}
-ellipse(20:50:30.5102,+44:34:35.566,222.319",78.005",20) # color=black font="helvetica 20 normal roman" dash=1
-ellipse(20:50:25.7240,+44:19:32.713,249.638",110.407",30) # color=black font="helvetica 20 normal roman" dash=1
-# text(20:50:16.8359,+44:37:08.024) color=black font="helvetica 20 normal roman" text={Comet1} dash=1
-# text(20:50:10.3924,+44:22:51.864) textangle=0.16670779 color=black font="helvetica 20 normal roman" text={Comet2} dash=1
-ellipse(20:57:20.8224,+43:49:17.541,366.790",120.443",0) # color=black font="helvetica 20 normal roman" text={Wall} dash=1
+point(313.9637500,43.8736111) # point=diamond width=2 color=black font="helvetica 16 normal roman" text={Bajamar Star}
+ellipse(313.8337881,43.8652847,403.442",131.233",70) # color=black font="helvetica 14 normal roman" text={Rim1} dash=1
+ellipse(314.6742037,43.3427859,570.998",331.657",120) # color=black dash=1
+ellipse(314.4323010,43.5176735,255.150",130.802",140) # color=black font="helvetica 14 normal roman" text={Boomerang1} dash=1
+ellipse(313.8483647,43.6424426,276.428",120.012",70) # color=black font="helvetica 14 normal roman" text={Rim2} dash=1
+ellipse(314.0391383,43.5592789,366.790",120.443",10) # color=black font="helvetica 14 normal roman" text={Rim3} dash=1
+# text(314.7585212,43.5177544) color=black font="helvetica 14 normal roman" text={Boomerang2}
+ellipse(312.6271258,44.5765461,222.319",78.005",20) # color=black font="helvetica 14 normal roman" text={Comet1} dash=1
+ellipse(312.6071833,44.3257537,249.638",110.407",30) # color=black font="helvetica 14 normal roman" text={Comet2} dash=1
+ellipse(312.7115043,44.4634909,284.097",140.923",80) # color=black dash=1
+# text(312.75,44.4747258) color=black font="helvetica 14 normal roman" text={Rim4}
